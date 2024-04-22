@@ -11,13 +11,15 @@ import DemoProps from './Props/DemoProps'
 import ExWithMap_Props from './Props/ExWithMap_Props'
 import DemoChildrenProps from './Props/DemoChildrenProps'
 import BaiTapXemChiTiet from './Props/BaiTapXemChiTiet'
+import ExerciseCarStore from './Props/ExcerciseCarStore/ExerciseCarStore'
+import ExCart from './Props/ExCart/ExCart'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div>
     {/* <HomePage /> */}
     {/* <Databinding /> */}
     {/* <HandleEvent /> */}
-    <DemoState />
+    {/* <DemoState /> */}
     {/* <StyleWithComponent />
     <div className='container'>
     <p className='p-primary'>abc</p>
@@ -30,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <ExWithMap_Props />
     </DemoChildrenProps> */}
     {/* <BaiTapXemChiTiet /> */}
-    
+    {/* <ExerciseCarStore /> */}
+    <ExCart />
   </div>
 )
