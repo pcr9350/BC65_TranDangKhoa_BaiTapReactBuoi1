@@ -18,9 +18,16 @@ import ChangePassword from "./pages/ChangePassword";
 import Page404 from "./pages/Page404";
 import ForgotPass from "./pages/ForgotPass";
 import FormComponent from "./pages/FormComponent/FormComponent";
+import FormikDemo from "./pages/FormComponent/FormikDemo";
+//Setup Redux
+import {store} from './redux/store'
+import {Provider} from 'react-redux'
+import NumberState from "./pages/DemoRedux/NumberState";
+import ChatApp from "./pages/DemoRedux/ChatApp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+  <Provider store={store}>
     <Routes>
       <Route path="" element={<HomeTemplate />}>
         <Route index element={<Home />}></Route>
@@ -30,6 +37,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="login" element={<Login />}></Route>
         <Route path="forgot" element={<ForgotPass />}></Route>
         <Route path="form" element={<FormComponent />}></Route>
+        <Route path='formik' element={<FormikDemo />}></Route>
+        <Route path="number-state" element={<NumberState />}></Route>
+        <Route path='chat-app' element={<ChatApp />}></Route>
       </Route>
       <Route path="user" element={<UserTemplate />}>
         <Route path="profile" element={<Profile />}></Route>
@@ -39,6 +49,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Route>
       <Route path="*" element={<Page404 />}></Route>
     </Routes>
+    </Provider>
   </BrowserRouter>
 );
 
