@@ -108,6 +108,18 @@ const HeaderHome = () => {
               to="/formik"
             >
               Formik Demo
+            </NavLink></li>
+            <li className="nav-item">
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? { border: "1px solid orange" } : {}
+              }
+              className={({ isActive }) =>
+                isActive ? "nav-link bg-white text-dark" : "nav-link"
+              }
+              to="/product-list"
+            >
+              Products
             </NavLink>
           </li>
           <li className="nav-item dropdown">
@@ -126,12 +138,21 @@ const HeaderHome = () => {
                 Number State
               </NavLink>
               <NavLink className="dropdown-item" to="/chat-app">
-                Action 2
+                Chat App
               </NavLink>
+              <NavLink className="dropdown-item" to="/form-sinh-vien">Form Sinh Vien</NavLink>
+              <NavLink className="dropdown-item" to="/table-list-sinh-vien">Table list sinh vien</NavLink>
             </div>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
+        <form className="d-flex my-2 my-lg-0">
+        
+            <NavLink
+              className='text-white mx-2'
+              to="/cart-page"
+            >(1)
+              <i className="fa fa-cart-plus fs-1"></i>
+            </NavLink>
           <input
             className="form-control mr-sm-2"
             type="text"
