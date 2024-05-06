@@ -35,7 +35,7 @@ const RenderWithMap = () => {
     // viết hàm render Card Product
     const renderCardProduct = () => {
         return arrProduct.map((item) => {
-            return <div className='col-4' ket={item.id}>
+            return <div className='col-4' key={item.id}>
                 <div className='card'>
                     <img src={`https://picsum.photos/id/${item.id}/200/200`} />
                     <div className='card-body'>
