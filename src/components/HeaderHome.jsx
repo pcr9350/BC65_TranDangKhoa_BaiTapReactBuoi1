@@ -144,6 +144,54 @@ const HeaderHome = () => {
               <NavLink className="dropdown-item" to="/table-list-sinh-vien">Table list sinh vien</NavLink>
             </div>
           </li>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="dropdownId"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Lifecycle- Hook
+            </a>
+            <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/useEffect-mounting">
+                Mounting Component
+              </NavLink>
+              <NavLink className="dropdown-item" to="/useEffect-updating">
+                Updating Component
+              </NavLink>
+              <NavLink className="dropdown-item" to="/useEffect-unmount">
+                Unmount Component
+              </NavLink>
+             
+            </div>
+          </li>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="dropdownId"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hook tối ưu render
+            </a>
+            <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/useCallback">
+                UseCallback
+              </NavLink>
+              <NavLink className="dropdown-item" to="/useMemo">
+                UseMemo
+              </NavLink>
+              <NavLink className="dropdown-item" to="/detail/1?">
+                Details Products
+              </NavLink>
+             
+            </div>
+          </li>
         </ul>
         <form className="d-flex my-2 my-lg-0">
         
