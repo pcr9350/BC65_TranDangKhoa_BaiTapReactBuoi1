@@ -1,6 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
 import { cartReducer } from './reducers/cartReducer';
 import sinhVienReducer from './reducers/sinhVienReducer';
+import userReducer from './reducers/userReducer';
+import loadingReducer from './reducers/loadingReducer';
+import messageReducer from './reducers/messageReducer';
+import modalReducer from './reducers/modalReducer';
 export const store = configureStore({
     reducer: {
         //state ứng dụng lưu tại đây
@@ -33,6 +37,10 @@ export const store = configureStore({
 
         },
         cartReducer:cartReducer,
-        sinhVienReducer
+        sinhVienReducer,
+        userReducer,
+        loadingReducer,
+        messageReducer,
+        modalReducer
     }
 })

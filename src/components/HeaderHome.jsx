@@ -1,8 +1,23 @@
 //rafce
-import React from "react";
-import { NavLink } from "react-router-dom";
-
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+import useRedux from '../CustomHook/useRedux'
 const HeaderHome = () => {
+  // cần lấy state login về
+  const {state, dispatch} = useRedux();
+  const {userLogin} = state.userReducer;
+  // console.log(state.userReducer.userLogin)
+
+  const renderLoginLink = ()=>{
+    if (userLogin){
+         //nếu có dữ liệu trên store thì là đăng nhập rồi
+         return <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to={'/user/profile'}>Hello {userLogin.email}</NavLink>
+        }
+        //Chưa có dữ liệu trên store thì là link login
+        return <NavLink className={({isActive})=> isActive ? 'nav-link bg-white text-dark' : 'nav-link' } to="/login">Login</NavLink>
+    }
+  
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <NavLink className="navbar-brand" to="/">
@@ -30,6 +45,19 @@ const HeaderHome = () => {
               to="/"
             >
               Home <span className="sr-only">(current)</span>
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? { border: "1px solid orange" } : {}
+              }
+              className={({ isActive }) =>
+                isActive ? "nav-link bg-white text-dark" : "nav-link"
+              }
+              to="/demo-antd"
+            >
+              Demo Antd
             </NavLink>
           </li>
           <li className="nav-item">
@@ -72,17 +100,7 @@ const HeaderHome = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              style={({ isActive }) =>
-                isActive ? { border: "1px solid orange" } : {}
-              }
-              className={({ isActive }) =>
-                isActive ? "nav-link bg-white text-dark" : "nav-link"
-              }
-              to="/login"
-            >
-              Login
-            </NavLink>
+          {renderLoginLink()}
           </li>
           <li className="nav-item">
             <NavLink
@@ -120,6 +138,19 @@ const HeaderHome = () => {
               to="/product-list"
             >
               Products
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              style={({ isActive }) =>
+                isActive ? { border: "1px solid orange" } : {}
+              }
+              className={({ isActive }) =>
+                isActive ? "nav-link bg-white text-dark" : "nav-link"
+              }
+              to="/demo-hoc"
+            >
+              HOC
             </NavLink>
           </li>
           <li className="nav-item dropdown">
@@ -186,9 +217,34 @@ const HeaderHome = () => {
               <NavLink className="dropdown-item" to="/useMemo">
                 UseMemo
               </NavLink>
+              <NavLink className="dropdown-item" to="/use-ref">
+                Demo Use Ref
+              </NavLink>
               <NavLink className="dropdown-item" to="/detail/1?">
                 Details Products
               </NavLink>
+             
+            </div>
+          </li>
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              id="dropdownId"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hook router
+            </a>
+            <div className="dropdown-menu" aria-labelledby="dropdownId">
+              <NavLink className="dropdown-item" to="/use-match">
+                Use Match
+              </NavLink>
+              <NavLink className="dropdown-item" to="/use-search-param">
+                useSearchParam
+              </NavLink>
+              
              
             </div>
           </li>
